@@ -23,10 +23,9 @@ function tpl {
 }
 
 # Make some working directories.
-mkdir "$DIR/nginx"
-mkdir "$DIR/nginx/sites-enabled"
-mkdir "$DIR/php"
-mkdir "$DIR/var"
+mkdir -p "$DIR/nginx/sites-enabled"
+mkdir -p "$DIR/php"
+mkdir -p "$DIR/var"
 
 # Build the default nginx config files.
 tpl "$TEMPLATES/nginx/nginx.conf.tpl" "$DIR/nginx/nginx.conf"
