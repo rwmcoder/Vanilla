@@ -1,12 +1,7 @@
 [global]
 
 [travis]
-user = travis
-group = travis
-
 listen = {PORT}
-listen.owner = travis
-listen.group = travis
 listen.mode = 0666
 
 pm = static
