@@ -206,6 +206,7 @@ try {
     } else {
         $config->saveToConfig($data);
         $data = $config->loadConfig();
+        $data['ConfigPath'] = $config->getConfigPath();
     }
 
     echo json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
