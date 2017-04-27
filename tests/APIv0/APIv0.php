@@ -206,11 +206,7 @@ class APIv0 extends HttpClient {
         $r = $this->post('/dashboard/setup.json', $post);
         var_export(file_get_contents($configPath));
         if (!$r['Installed']) {
-            echo PHP_EOL.'<<<<<<<<<<'.PHP_EOL;
-            var_export($r);
-            var_export($configContents);
-            echo PHP_EOL.'>>>>>>>>>>'.PHP_EOL;
-            die();
+            die(PHP_EOL.'<<<<<<<<<<'.PHP_EOL.$configContents.PHP_EOL.'>>>>>>>>>>'.PHP_EOL);
             throw new \Exception("Vanilla did not install.");
         }
 
