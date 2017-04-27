@@ -180,14 +180,14 @@ class APIv0 extends HttpClient {
         // Touch the config file because hhvm runs as root and we don't want the config file to have those permissions.
         $configPath = $this->getConfigPath();
         touch($configPath);
+        $cfgOne = file_get_contents($configPath);
         chmod($configPath, 0777);
         $apiKey = sha1(openssl_random_pseudo_bytes(16));
         $this->saveToConfig([
             'Garden.Errors.StackTrace' => true,
             'Test.APIKey' => $apiKey,
         ]);
-        $configContents = file_get_contents($configPath);
-        die(PHP_EOL.'>>>>>>>>>>'.PHP_EOL.$configContents.PHP_EOL.'<<<<<<<<<<'.PHP_EOL);
+        $cfgTwo = file_get_contents($configPath);
         self::setAPIKey($apiKey);
 
         // Install Vanilla via cURL.
@@ -206,6 +206,7 @@ class APIv0 extends HttpClient {
 
         $r = $this->post('/dashboard/setup.json', $post);
         if (!$r['Installed']) {
+            die(PHP_EOL.'>>>>>>>>>>'.PHP_EOL.$cfgOne.PHP_EOL.'=========='.PHP_EOL.$cfgTwo.PHP_EOL.'<<<<<<<<<<'.PHP_EOL);
             throw new \Exception("Vanilla did not install.");
         }
 
