@@ -179,10 +179,10 @@ class APIv0 extends HttpClient {
 
         // Touch the config file because hhvm runs as root and we don't want the config file to have those permissions.
         $configPath = $this->getConfigPath();
-        if (file_exists($configPath)) {
-            die("Config should not exist: {$configPath}");
-        }
         touch($configPath);
+        if (file_exists($configPath)) {
+            die("Config: {$configPath}");
+        }
         chmod($configPath, 0777);
         $apiKey = sha1(openssl_random_pseudo_bytes(16));
         $this->saveToConfig([
