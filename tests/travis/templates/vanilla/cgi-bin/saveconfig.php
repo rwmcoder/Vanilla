@@ -204,7 +204,7 @@ try {
         $config->deleteConfig();
         $data = [];
     } else {
-        $data['TravisConfigPath'] = $config->getConfigPath();
+        $config->deleteConfig();
         $config->saveToConfig($data);
         $data = $config->loadConfig();
     }
