@@ -181,7 +181,8 @@ class APIv0 extends HttpClient {
         $configPath = $this->getConfigPath();
         touch($configPath);
         if (file_exists($configPath)) {
-            die("Config: {$configPath}");
+            $configContents = file_get_contents($configPath);
+            die(PHP_EOL.'<<<<<<<<<<'.PHP_EOL.$configContents.PHP_EOL.'>>>>>>>>>>'.PHP_EOL);
         }
         chmod($configPath, 0777);
         $apiKey = sha1(openssl_random_pseudo_bytes(16));
@@ -207,9 +208,7 @@ class APIv0 extends HttpClient {
         ];
 
         $r = $this->post('/dashboard/setup.json', $post);
-        var_export(file_get_contents($configPath));
         if (!$r['Installed']) {
-            die(PHP_EOL.'<<<<<<<<<<'.PHP_EOL.$configContents.PHP_EOL.'>>>>>>>>>>'.PHP_EOL);
             throw new \Exception("Vanilla did not install.");
         }
 
