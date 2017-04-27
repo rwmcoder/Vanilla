@@ -204,9 +204,9 @@ try {
         $config->deleteConfig();
         $data = [];
     } else {
+        $data['TravisConfigPath'] = $config->getConfigPath();
         $config->saveToConfig($data);
         $data = $config->loadConfig();
-        $data['TravisConfigPath'] = $config->getConfigPath();
     }
 
     echo json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
