@@ -3,11 +3,13 @@
 // This is the global application configuration file that sets up default values for configuration settings.
 $Configuration = [];
 
+$Configuration['Debug'] = true;
+
 // Auto-enable some addons.
 $Configuration['EnabledPlugins']['stubcontent'] = true;
 $Configuration['EnabledApplications']['Dashboard'] = 'dashboard';
 
-// Database defaults.
+// Database defaults.\
 $Configuration['Database']['Engine'] = 'MySQL';
 $Configuration['Database']['Host'] = 'dbhost';
 $Configuration['Database']['Name'] = 'dbname';
@@ -43,7 +45,7 @@ $Configuration['Garden']['PrivateCommunity'] = false;
 $Configuration['Garden']['Forms']['HoneypotName'] = 'hpt';
 
 // Developer stuff.
-$Configuration['Garden']['Debug'] = false;
+$Configuration['Garden']['Debug'] = true;
 $Configuration['Garden']['Errors']['LogFile'] = '';
 $Configuration['Garden']['FolderBlacklist'] = ['.', '..', '_svn', '.git']; // Folders we should never search for classes.
 
