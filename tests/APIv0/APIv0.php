@@ -186,7 +186,7 @@ class APIv0 extends HttpClient {
             'Garden.Errors.StackTrace' => true,
             'Test.APIKey' => $apiKey,
         ]);
-        var_export(file_get_contents($configPath));
+        $configContents = file_get_contents($configPath);
         self::setAPIKey($apiKey);
 
         // Install Vanilla via cURL.
@@ -206,8 +206,11 @@ class APIv0 extends HttpClient {
         $r = $this->post('/dashboard/setup.json', $post);
         var_export(file_get_contents($configPath));
         if (!$r['Installed']) {
+            echo PHP_EOL.'<<<<<<<<<<'.PHP_EOL;
             var_export($r);
-            die('pls');
+            var_export($configContents);
+            echo PHP_EOL.'>>>>>>>>>>'.PHP_EOL;
+            die();
             throw new \Exception("Vanilla did not install.");
         }
 
