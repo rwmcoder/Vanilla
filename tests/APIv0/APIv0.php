@@ -204,6 +204,7 @@ class APIv0 extends HttpClient {
         ];
 
         $r = $this->post('/dashboard/setup.json', $post);
+        var_export(file_get_contents($configPath));
         if (!$r['Installed']) {
             var_export($r);
             die('pls');
