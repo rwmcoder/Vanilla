@@ -186,6 +186,7 @@ class APIv0 extends HttpClient {
             'Garden.Errors.StackTrace' => true,
             'Test.APIKey' => $apiKey,
         ]);
+        var_export(file_get_contents($configPath));
         self::setAPIKey($apiKey);
 
         // Install Vanilla via cURL.
