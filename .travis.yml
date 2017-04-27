@@ -13,9 +13,6 @@ matrix:
     - php: hhvm
   fast_finish: true
 
-cache:
-  - apt
-
 addons:
   apt:
     packages:
