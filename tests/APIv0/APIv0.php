@@ -204,6 +204,8 @@ class APIv0 extends HttpClient {
 
         $r = $this->post('/dashboard/setup.json', $post);
         if (!$r['Installed']) {
+            var_export($r);
+            die();
             throw new \Exception("Vanilla did not install.");
         }
 
