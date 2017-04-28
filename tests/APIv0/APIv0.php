@@ -203,11 +203,10 @@ class APIv0 extends HttpClient {
             'PasswordMatch' => 'travis',
             'HtaccessAction' => 'skip',
         ];
-        debugLog($cfgTwo);
+        debug('>>>>>>>>>>'.PHP_EOL.$configPath.PHP_EOL.'=========='.PHP_EOL.$cfgOne.PHP_EOL.'=========='.PHP_EOL.$cfgTwo.PHP_EOL.'<<<<<<<<<<');
 
         $r = $this->post('/dashboard/setup.json', $post);
         if (!$r['Installed']) {
-            die(PHP_EOL.'>>>>>>>>>>'.PHP_EOL.$configPath.PHP_EOL.$cfgOne.PHP_EOL.'=========='.PHP_EOL.$cfgTwo.PHP_EOL.'<<<<<<<<<<'.PHP_EOL);
             throw new \Exception("Vanilla did not install.");
         }
 
