@@ -66,6 +66,7 @@ fi
 
 # Copy the config changer that will allow Vanilla to use a different config file per host.
 cp "$TEMPLATES/vanilla/conf/bootstrap.before.php" "$ROOT/conf"
+cp "$TEMPLATES/vanilla/conf/bootstrap.early.php" "$ROOT/conf"
 
 # Start nginx.
 nginx -c "$DIR/nginx/nginx.conf"
