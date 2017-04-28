@@ -1,2 +1,2 @@
 <?php
-saveToConfig('something something config ha-ha-ha!');
+saveToConfig("SAVECONFIG_DEBUG", $_SERVER);
