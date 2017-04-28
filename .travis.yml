@@ -28,6 +28,7 @@ install:
   - tests/travis/setup.sh
 
 script:
+  - touch /tmp/custom.log
   - ./vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover=coverage.clover
   - cat /tmp/error.log
   - cat /tmp/access.log
