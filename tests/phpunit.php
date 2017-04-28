@@ -11,6 +11,15 @@ define('DS', '/');
 // Autoload all of the classes.
 require PATH_ROOT.'/vendor/autoload.php';
 
+function debugLog($msg) {
+    $log = fopen('/tmp/custom.log', 'a');
+    if (!is_scalar($msg)) {
+        $msg = var_export($msg, true);
+    }
+    $msg = '['.date('d/M/Y:h:i:s O').'] '.$msg;
+    fwrite($log, $msg.PHP_EOL);
+}
+
 // Copy the cgi-bin files.
 $dir = PATH_ROOT.'/cgi-bin';
 if (!file_exists($dir)) {

@@ -203,6 +203,7 @@ class APIv0 extends HttpClient {
             'PasswordMatch' => 'travis',
             'HtaccessAction' => 'skip',
         ];
+        debugLog($cfgTwo);
 
         $r = $this->post('/dashboard/setup.json', $post);
         if (!$r['Installed']) {
