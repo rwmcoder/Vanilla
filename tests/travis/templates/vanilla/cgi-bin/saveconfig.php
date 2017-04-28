@@ -204,7 +204,6 @@ try {
         $config->deleteConfig();
         $data = [];
     } else {
-        $config->deleteConfig();
         $config->saveToConfig($data);
         $data = $config->loadConfig();
     }
