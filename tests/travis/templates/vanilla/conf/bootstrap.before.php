@@ -7,6 +7,4 @@ call_user_func(function() {
         define('PATH_CONF_DEFAULT', PATH_ROOT."/conf/$host.php");
         define('PATH_CACHE', PATH_ROOT."/cache/$host/");
     }
-
-    saveToConfig('something something config ha-ha-ha!');
 });
