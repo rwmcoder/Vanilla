@@ -203,7 +203,7 @@ class APIv0 extends HttpClient {
             'PasswordMatch' => 'travis',
             'HtaccessAction' => 'skip',
         ];
-        debug('>>>>>>>>>>'.PHP_EOL.$configPath.PHP_EOL.'=========='.PHP_EOL.$cfgOne.PHP_EOL.'=========='.PHP_EOL.$cfgTwo.PHP_EOL.'<<<<<<<<<<');
+        debugLog('>>>>>>>>>>'.PHP_EOL.$configPath.PHP_EOL.'=========='.PHP_EOL.$cfgOne.PHP_EOL.'=========='.PHP_EOL.$cfgTwo.PHP_EOL.'<<<<<<<<<<');
 
         $r = $this->post('/dashboard/setup.json', $post);
         if (!$r['Installed']) {
