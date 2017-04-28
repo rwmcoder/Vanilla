@@ -185,7 +185,8 @@ class APIv0 extends HttpClient {
         $apiKey = sha1(openssl_random_pseudo_bytes(16));
         $this->saveToConfig([
             'Garden.Errors.StackTrace' => true,
-            'Test.APIKey' => $apiKey
+            'Test.APIKey' => $apiKey,
+            'uniqid' => uniqid(),
         ]);
         $cfgTwo = file_get_contents($configPath);
 
