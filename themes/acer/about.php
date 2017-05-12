@@ -1,20 +1,20 @@
 <?php if (!defined('APPLICATION')) exit();
 /**
- * @copyright 2009-2017 Vanilla Forums Inc.
+ * @copyright 2017 Acer Inc.
  * @license http://www.opensource.org/licenses/gpl-2.0.php GNU GPL v2
- * @package Baseline Theme
- * @since 2.0
+ * @package Acer Theme
+ * @since 0.9
  */
 
 /**
  * An associative array of information about this application.
  */
-$ThemeInfo['default'] = array(
+$ThemeInfo['acer'] = array(
     'Name' => '+Baseline',
-    'Description' => "The default theme for Vanilla. This theme's purpose is to give the bare-minimum of styling on everything except the forum contents. Our goal is for you to take this theme and customize it by adding your own header & footer.",
+    'Description' => "Test theme for Acer. This theme's purpose is for testing Vanilla theme work.",
     'Version' => APPLICATION_VERSION,
-    'Author' => "Mark O'Sullivan",
-    'AuthorEmail' => 'mark@vanillaforums.com',
-    'AuthorUrl' => 'http://markosullivan.ca',
+    'Author' => "Robert Murray",
+    'AuthorEmail' => 'robert.murray@acer.com',
+    'AuthorUrl' => 'http://rwm.website',
     'Hidden' => false,
 );
