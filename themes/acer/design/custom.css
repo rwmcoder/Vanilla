@@ -1,0 +1,35 @@
+/* Global reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset,img { border:0; }
+address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal; }
+ol,ul { list-style: none; }
+caption,th { text-align:left; }
+h1,h2,h3,h4,h5,h6 { /* font-size:100%;  font-weight:normal; */ }
+q:before,q:after { content:''; }
+a:focus { -moz-outline: none; }
+
+/* HTML5 element defaults */
+header, footer, nav, section, article { display: block; }
+
+body {
+    font-family: Trebuchet MS, Verdana;
+    font-size: 16px;
+}
+/* Helper classes */
+.clear  { clear: both; }
+.center { text-align: center; margin-left: auto; margin-right: auto; }
+.right  { text-align: right; }
+.left   { text-align: left;  }
+.floatr  { float: right; }
+.floatl  { float: left; }
+.nofloat { float: none; }
+.hidden { visibility: hidden; }
+.hide { display: none; }
+img.floatr  { margin-left: 15px;  margin-bottom: 15px; }
+img.floatl  { margin-right: 15px; margin-bottom: 15px; }
+
+small, .smalltext {
+  line-height: 1.2em;
+  font-size: 90%;
+}
